@@ -15,13 +15,13 @@ public class ArmyTest {
 
     @Test
     public void enroll_WhenFirstSoldierEnrolls_ThenHeIsInTheFrontline() {
-        Soldier soldier = new Soldier("frontline soldier");
+        Soldier firstSoldier = new Soldier("first line soldier");
         Soldier secondSoldier = new Soldier("second soldier in line");
         Army army = new Army();
 
-        army.enroll(soldier);
+        army.enroll(firstSoldier);
         army.enroll(secondSoldier);
 
-        assertThat(army.getFrontlineSoldier()).isEqualTo(soldier);
+        assertThat(army.getFirstSoldierInLine()).isEqualTo(firstSoldier);
     }
 }

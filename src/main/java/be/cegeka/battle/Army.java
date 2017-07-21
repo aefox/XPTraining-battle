@@ -16,7 +16,7 @@ public class Army {
         soldiers.add(soldier);
     }
 
-    public Soldier getFrontlineSoldier() {
+    public Soldier getFirstSoldierInLine() {
         return soldiers.peek();
     }
 }
