@@ -2,10 +2,11 @@ package be.cegeka.battle;
 
 public class Fight {
     FightResult fight(Soldier attacker, Soldier defender) {
-        if (attacker.getWeapon() == defender.getWeapon()) {
-            return FightResult.ATTACKER_WINS;
+        if (defender.getWeapon().getDamage() > attacker.getWeapon().getDamage()) {
+            return FightResult.DEFENDER_WINS;
         }
-        return null;
+
+        return FightResult.ATTACKER_WINS;
     }
 
     enum FightResult {
