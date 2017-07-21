@@ -17,6 +17,11 @@ public class Soldier {
         this.weapon = BARE_FIST;
     }
 
+    public Soldier(String name, Weapon weapon) {
+        this(name);
+        this.weapon = weapon;
+    }
+
     String getName() {
         return this.name;
     }

@@ -2,13 +2,14 @@ package be.cegeka.battle;
 
 import org.junit.Test;
 
+import static be.cegeka.battle.Weapon.AXE;
 import static be.cegeka.battle.Weapon.BARE_FIST;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SoldierTest {
 
     @Test
-    public void construction_ASoldierMustHaveAName() {
+    public void construction_ASoldierMustHaveANameAndADefaultWeapon() {
         Soldier soldier = new Soldier("name");
 
         assertThat(soldier.getName()).isEqualTo("name");
@@ -30,4 +31,10 @@ public class SoldierTest {
         new Soldier("   ");
     }
 
+    @Test
+    public void construction_ASoldierCanBeGivenADifferentWeapon() {
+        Soldier soldier = new Soldier("name", AXE);
+
+        assertThat(soldier.getWeapon()).isEqualTo(AXE);
+    }
 }
